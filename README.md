@@ -1,3 +1,7 @@
 # simplex_python_interface
 
-Gerado uma interface para aplicação do método Simplex na obtenção de otimização de sistemas
+Interface para aplicação do método Simplex (otimização de sistemas).
+
+## Related
+
+* [Trabalhos Relacionados](https://github.com/Haiga/Trabalhos)
