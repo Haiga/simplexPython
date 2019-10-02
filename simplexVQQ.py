@@ -4,8 +4,6 @@ from tkinter import messagebox
 def arredondar(num):
     return float( '%g' % ( num ) )
 
-
-
 def mostrar_matriz(matriz, n_linhas, n_colunas):
     for i in range(n_linhas):
         for j in range(n_colunas):
@@ -37,8 +35,6 @@ def posicaoMin(arranjo):
     for j in range(len(arranjo)):
         if (arranjo[j]==min(arranjo)):
             return j
-
-
 
 def obterM(numVariaveis, numRestricoes, funcao, max_or_min, variaveisLivres, matrizRestricoes, condicoes):
     
@@ -219,7 +215,6 @@ def preecherMatriz(max_or_min, numVariaveis,funcao,variaveisLivres, numRestricoe
     return matrizMetodo
     
         
-
 def printSolut(max_or_min,matrizMetodo,numColunas, numVariaveis,numRestricoes, solBasica):#ainda falta reconverter as variáveis livres
     string = " "
     if(max_or_min==1):
@@ -280,23 +275,12 @@ def printMultiSolut(max_or_min,matrizMetodo, matrizMetodoTemp, numColunas, numVa
     string = string + "\n com 0 ≤ T ≤ 1"
     #messagebox.showinfo("Information", string)
     return string
-    
-
-        
-
-        
-                
-            
-        
-
-
-
 
 
 
 def setValores():
-	numVariaveis = 3 #PAUSEHERE
-	numRestricoes = 3#PAUSEHERE
+	numVariaveis = 3
+	numRestricoes = 3
 
 	#Feito isso verificamos quais são livres, se é variável livre no vetor será 1
 	variaveisLivres = criar_vetor(numVariaveis)
