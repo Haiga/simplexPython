@@ -12,7 +12,7 @@ from PyQt5.QtCore import *
 import tkinter
 from tkinter import messagebox
 
-import simplexVQQ
+import simplex
 
 def definirScrollBar(layout):
         widgetTemp = QtWidgets.QWidget()
@@ -392,7 +392,7 @@ class App(QMainWindow):
             maxORmin = -1
 
         
-        variaveisLivres = simplexVQQ.criar_vetor(numVariaveis)
+        variaveisLivres = simplex.criar_vetor(numVariaveis)
         for i in range(numVariaveis):
             if(self.labels2[(i,1)].currentIndex()==0):
                 variaveisLivres[i] = 0
@@ -400,7 +400,7 @@ class App(QMainWindow):
                 variaveisLivres[i] = 1
 
 
-        funcao = simplexVQQ.criar_vetor(numVariaveis)      
+        funcao = simplex.criar_vetor(numVariaveis)      
         for i in range(numVariaveis):
             #Assumo como zero nesse caso, pois é conveniente
             try:
@@ -409,7 +409,7 @@ class App(QMainWindow):
                 funcao[i] = 0
 
 
-        condicoes = simplexVQQ.criar_vetor(numRestricoes)
+        condicoes = simplex.criar_vetor(numRestricoes)
         for i in range(numRestricoes):
             if(self.labels3[(i+1,numVariaveis)].currentIndex() == 0):
                 condicoes[i] = 0
@@ -418,7 +418,7 @@ class App(QMainWindow):
             else:
                 condicoes[i] = 1
         
-        matrizRestricoes = simplexVQQ.criar_matriz(numRestricoes, numVariaveis + 1)
+        matrizRestricoes = simplex.criar_matriz(numRestricoes, numVariaveis + 1)
         for i in range(numRestricoes + 1):
             for j in range(numVariaveis + 2):
                 if(j==numVariaveis) and (i!=0):
@@ -438,7 +438,7 @@ class App(QMainWindow):
                     except:
                         matrizRestricoes[i-1][j-1] = 0
 
-        resultado = simplexVQQ.obterM(numVariaveis, numRestricoes,funcao, maxORmin, variaveisLivres, matrizRestricoes, condicoes)
+        resultado = simplex.obterM(numVariaveis, numRestricoes,funcao, maxORmin, variaveisLivres, matrizRestricoes, condicoes)
         #tirar parametro numVariaveis, numRestricoes
         #retorno da função par chave, var folga, var livres,  x1, x2 , x3 ...
         #message for user
