@@ -181,7 +181,6 @@ class App(QMainWindow):
         #Possibilidade: Colocar o label vermelho, ou escrever uma mensagem abaixo informando-o
 
         #Organização: Separar esse tratamento de exceção dessa função(já que é usada em outra parte)
-        #Não funcionou conforme o esperado, testar depois
         try:
             self.numVarWidget1 = int(self.labels[(0,1)].text())
             self.numRestricWidget1 = int(self.labels[(1,1)].text())
