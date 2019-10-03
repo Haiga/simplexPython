@@ -1,4 +1,4 @@
-# simplex_python_interface
+# simplexPython
 
 Interface para aplicação do método Simplex (otimização de sistemas).
 
